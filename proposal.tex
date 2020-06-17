@@ -31,7 +31,7 @@
 % There are only a few types of document built-in to latex, like article.
 % If you google "latex article options" you'll find lots of sites listing
 % what each option does.
-\documentclass[12pt, a4paper, oneside, openany, dvipsnames, hidelinks]{article}
+\documentclass[a4paper, oneside, hidelinks]{article}
 
 % Lot's of latex programmers have created extra packages for Latex.
 % They're not enabled by default as they affect the length of time it takes
@@ -132,17 +132,9 @@
 \setminted{frame=lines, framesep=2mm, baselinestretch=1.2, linenos}
 
 % The title.
-\title{Improving ELIZA using feedback}
+\title{Research proposal: \\ Improving ELIZA using regular expressions}
 \author{Ian McLoughlin (ian.mcloughlin@gmit.ie)}
 \date{\today}
-
-\geometry{
- a4paper,
- total={170mm,257mm},
- left=30mm,
- right=30mm,
- top=10mm,
- }
 
 % Everything above the below \begin{document} command is referred to as the
 % preamble. The preamble configures the features and styles of the output.
@@ -161,9 +153,9 @@
     We propose to research and develop an impovement to Joseph Weisenbaum's
     ELIZA program. The ELIZA program simulates a psychiatrist's questions and
     responses to a patient. The user of the program is the patient in the
-    simulation. The program was designed to demonstrate much of the
+    simulation. The program was designed to demonstrate some of the
     superficiality of human conversation. The original program used
-    reflective text-based substitutions. Carefully crafted user inputs could
+    reflective text-based substitutions. Carefully crafted user inputs
     easily demonstrate that they were talking to a simulation rather than a
     person. We are proposing to use regular expressions to further enhance the
     program, making it somewhat more difficult to demonstrate it is a
@@ -178,12 +170,20 @@
   % the same effect. The former is generally preferred as it's cleaner and latex
   % can generally figure out where the section ends.
   \section{Introduction}
-    The introduction generally overlaps with the abstract, but expands greatly
-    on the ideas. It also gives an overview of the document, giving a one or 
-    two sentence overview of each part of the document.
-
+    The introduction generally overlaps with the abstract, but expands
+    on the ideas. Here, I would discuss the overall proposal and put a context
+    around it.
+    
     You can start a new paragraph by leaving a blank line. This is a new
     paragraph.
+    The introduction should also give a short overview of the rest of the
+    document -- a one or two sentence overview of each part of the document.
+
+  % Second section.
+  \section{Literature}
+    It's important to refer to the existing literature in your proposal. In a
+    research proposal I would expect to see at least three or four references
+    directly related to the proposal. The next sentence includes a reference.
     % References can be inserted using the \cite{} command with the item's
     % bibtex name in the curly braces. This will insert the reference indicator
     % where the \cite command is called and also ensure the reference title,
@@ -191,43 +191,84 @@
     % whitespace around the reference, try googling "latex reference tilde".
     ELIZA is a program written by Joseph Wiesenbaum. It was proposed in his 1966
     paper~\cite{weisenbaumeliza}.
-
-  % Let's create a subsection.
-  \subsection{Hello, subsection}
-    This is a subsection. It contains text.
-
-  % Second section.
-  \section{Literature}
+    Wiesenbaum also wrote a book~\cite{weisenbaumcomputerpower}.
+    He passed away in 2008~\cite{weisenbaumnytobituary}.
     % We can give most high-level items a label with the \label command.
     % We'll come back to that in a minute.
     \label{section:literature}
     Typically a research proposal will give a bit of background, listing four or
     five directly relevant peer-reviewed publications.
 
+  % Another section.
+  \section{Research question}
+    All research starts out with an idea. There are no shortage of interesting 
+    ideas. An idea needs to be developed into a research question to have a
+    reasonable chance of leading to a successful thesis submission.
+    
+    A research question has a few essential characteristics. It should be clear 
+    and specific. It should be informed by the research work of others, as
+    described in peer reviewed publications, books, and other reliable sources.
+    It should lend itself to an investigation of some sort, that either provides
+    evidence as to its answer or answers it outright. The investigation needs to
+    be reasonable to complete in the timeframe of the proposed research project.
 
+    It can be difficult to formulate a research question that meets all of those
+    characteristics. Research by its nature is tentative. It may seem impossible
+    to know ahead of time whether a given investigation could be completed in a
+    given timeframe.
+    
+    The purpose of a research proposal, however, is to demonstrate an
+    understanding of the what will be involved in carrying out your research
+    project. You will, in consultation with your supervisors, be able to adapt
+    your research topic, research question, deliverables, and milestones as the
+    project evolves.
+
+    Everything is geared towards helping you to succeed in submitting a
+    successful thesis.
+
+
+  % Another section.
   \section{Timeline}
-  \begin{figure}[H]
-    \begin{center}
-      \begin{ganttchart}[title/.style={draw=none},vgrid,hgrid,canvas/.append style={draw=gmitgrey},bar/.append style={fill=gmitblue}]{1}{24}
-        %labels
-        %\gantttitle{Project}{24}\\
-        \gantttitle{Q4'20}{3}
-        \gantttitle{Q1'21}{3}
-        \gantttitle{Q2'21}{3}
-        \gantttitle{Q3'21}{3}
-        \gantttitle{Q4'21}{3}
-        \gantttitle{Q1'22}{3}
-        \gantttitle{Q2'22}{3}
-        \gantttitle{Q3'22}{3} \\
-        %tasks
-        \ganttbar{Literature}{1}{3} \\
-        \ganttbar{Develop}{3}{12} \\
-        \ganttbar{Test}{12}{15} \\
-        \ganttbar{Finalise}{15}{24} \\
-      \end{ganttchart}
-    \end{center}
-    \caption{Gantt Chart}
-  \end{figure}
+    This project will take two years to complete. The Gantt chart in Figure
+    \ref{figure:ganttchart} gives an overview of the timeline.
+
+    
+    \begin{figure}[H]
+      \begin{center}
+        \begin{ganttchart}[title/.style={draw=none},
+                           vgrid, hgrid,
+                           canvas/.append style={draw=gmitgrey},
+                           bar/.append style={fill=gmitgrey!60}]{1}{24}
+          \gantttitle{Q4'20}{3}
+          \gantttitle{Q1'21}{3}
+          \gantttitle{Q2'21}{3}
+          \gantttitle{Q3'21}{3}
+          \gantttitle{Q4'21}{3}
+          \gantttitle{Q1'22}{3}
+          \gantttitle{Q2'22}{3}
+          \gantttitle{Q3'22}{3} \\
+          \ganttbar{Literature}{1}{3} \\
+          \ganttbar{Develop}{4}{12} \\
+          \ganttbar{Test}{13}{15} \\
+          \ganttbar{Finalise}{16}{24}
+        \end{ganttchart}
+      \end{center}
+      \caption{Gantt Chart}
+      \label{figure:ganttchart}
+    \end{figure}
+
+
+  % Let's create a subsection.
+  \subsection{Milestones}
+    The project will be delivered through a series of milstones. The milestones
+    will have the follow deliverables.
+    % Here's a description list. Bulleted and numbered lists are similar.
+    \begin{description}
+      \item[Literature review:] this will be delivered at the end of month 3.
+      \item[Chatbot:] this will be delivered at the end of month 12.
+      \item[Tests:] the tests will be completed at the end of month 15.
+      \item[Thesis:] the thesis will be delivered at the end of month 24.
+    \end{description}
 
   % Latex together with bibtex will generate a list of references from the
   % \cite commands in the latex document and the items in the bib file.
