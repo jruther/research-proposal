@@ -1,0 +1,141 @@
+% Latex is used to generate professionally typeset documents. It's different
+% from word processors like Microsoft Word in that it separates style from
+% content. It is designed to let you write your document without worrying too
+% much about fonts, positioning of figures and tables, and what the document
+% should look like. Latex uses a set of well-established rules to decide these
+% things.
+
+% Latex files are text files where most of the content is the words, sentences,
+% and paragraphs. When complete, latex files are fed into the pdflatex program
+% to create a pdf - we usually call this compiling the document.
+
+% Within the text you can put comments and commands. These lines are comments.
+% On any line, everything after a percent sign (%) is treated as a comment.
+% Comments don't have any effect on the output file.
+
+% Commands start with a backslash. The first command is usually \documentclass,
+% as below. It tells latex the type of document to generate: book, article,
+% letter, etc. Commands can take parameters and/or options.
+
+% Parameters appear in curly braces after the command. Options appear in square
+% brackets between the command and the parameters. The \documentclass command
+% below has "article" as a parameter and "a4paper" as one option. Multiple
+% options are separated by commas.
+
+% Latex is built on a language called TeX. TeX is a simple language with only a
+% few built-in commands. TeX allows us to create our own commands. LaTeX is a
+% huge collection of such programmer-created commands in one handy package.
+
+% There are only a few types of document built-in to latex, like article.
+% If you google "latex article options" you'll find lots of sites listing
+% what each option does.
+\documentclass[12pt, a4paper, oneside, openany, dvipsnames, hidelinks]{article}
+
+  % Lot's of latex programmers have created extra packages for Latex.
+  % They're not enabled by default as they affect the length of time it takes
+  % to compile the document. They can enable things like colour and hyperlinks
+  % in the output pdf. The \usepackage command will include a package, so long
+  % as it is installed along with latex. TeXLive include lots of standard
+  % packages by default. Google "latex minted" to see what it does.
+
+  % Enables the use of colour. 
+  \usepackage{xcolor}
+  % Syntax high-lighting for code. Requires Python's pygments.
+  \usepackage{minted}
+  % Enables the use of umlauts and other accents.
+  \usepackage[utf8]{inputenc}
+  % Diagrams.
+  \usepackage{tikz}
+  % Settings for captions, such as sideways captions.
+  \usepackage{caption}
+  % Symbols for units, like degrees and ohms.
+  \usepackage{gensymb}
+  % Latin modern fonts - better looking than the defaults.
+  \usepackage{lmodern}
+  % Allows for columns spanning multiple rows in tables.
+  \usepackage{multirow}
+  % Better looking tables, including nicer borders.
+  \usepackage{booktabs}
+  % More math symbols.
+  \usepackage{amssymb}
+  % More math fonts, like mathbb.
+  \usepackage{amsfonts}
+  % More math layouts, equation arrays, etc.
+  \usepackage{amsmath}
+  % More theorem environments.
+  \usepackage{amsthm}
+  % More column formats for tables.
+  \usepackage{array}
+  % Adjust the sizes of box environments.
+  \usepackage{adjustbox}
+  % Better looking single quotes in verbatim and minted environments.
+  \usepackage{upquote}
+  % Better blank space decisions.
+  \usepackage{xspace}
+  % Better looking tikz trees.
+  \usepackage{forest}
+  % URLs.
+  \usepackage{hyperref}
+  % For plotting.
+  \usepackage{pgfplots}
+  % For filler.
+  \usepackage{lipsum}
+  % For line spacing
+  \usepackage{setspace}
+  
+  % The tikz package allows us to create diagrams and plots using latex
+  % commands. It defines some extra commands, like \usetikzlibrary below.
+
+  % Various tikz libraries.
+  % For drawing mind maps.
+  \usetikzlibrary{mindmap}
+  % For adding shadows.
+  \usetikzlibrary{shadows}
+  % Extra arrows tips.
+  \usetikzlibrary{arrows.meta}
+  % Old arrows.
+  \usetikzlibrary{arrows}
+  % Automata.
+  \usetikzlibrary{automata}
+  % For more positioning options.
+  \usetikzlibrary{positioning}
+  % Creating chains of nodes on a line.
+  \usetikzlibrary{chains}
+  % Fitting node to contain set of coordinates.
+  \usetikzlibrary{fit}
+  % Extra shapes for drawing.
+  \usetikzlibrary{shapes}
+  % For markings on paths.
+  \usetikzlibrary{decorations.markings}
+  % For advanced calculations.
+  \usetikzlibrary{calc}
+  
+  % No prizes for guessing what the following few commands do.
+
+  % GMIT colours.
+  \definecolor{gmitblue}{RGB}{20,134,225}
+  \definecolor{gmitred}{RGB}{220,20,60}
+  \definecolor{gmitgrey}{RGB}{67,67,67}
+  
+  % Set line spacing.
+  \onehalfspacing
+
+  % Tell minted to use the following colour scheme. 
+  \usemintedstyle{manni}
+  % Set some minted options.
+  \setminted{frame=lines, framesep=2mm, baselinestretch=1.2, fontsize=\footnotesize, linenos}
+  
+  % Everything above the below \begin{document} command is referred to as the
+  % preamble. The preamble configures the features and styles of the output.
+  % The \begin{document} command tells latex we beginning the content of the
+  % document - the words, sentences, and paragraphs we want to create.
+
+  % Begin the document.  
+  \begin{document}
+
+
+
+  % Include the bibliography with IEEE style.
+  \bibliographystyle{ieeetr}
+  \bibliography{bibliography}
+  \end{document}
