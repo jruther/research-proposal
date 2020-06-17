@@ -270,6 +270,49 @@
       \item[Thesis:] the thesis will be delivered at the end of month 24.
     \end{description}
 
+  \section{More}
+    Latex is great at rendering math.
+    $$ math^{works} $$
+
+    \begin{figure}[H]
+      \begin{center}
+        \includegraphics[width=200px]{img/gmit-logo.jpg}
+      \end{center}
+      \caption{The GMIT logo.}
+      \label{img:logo}
+    \end{figure}
+    
+    \begin{tikzpicture}
+      \path[mindmap,concept color=black,text=white]
+        node[concept] {Computer Science}
+        [clockwise from=0]
+        child[concept color=green!50!black] {
+          node[concept] {practical}
+          [clockwise from=90]
+          child { node[concept] {algorithms} }
+          child { node[concept] {data structures} }
+          child { node[concept] {pro\-gramming languages} }
+          child { node[concept] {software engineer\-ing} }
+        }  
+        child[concept color=blue] {
+          node[concept] {applied}
+          [clockwise from=-30]
+          child { node[concept] {databases} }
+          child { node[concept] {WWW} }
+        }
+        child[concept color=red] { node[concept] {technical} }
+        child[concept color=orange] { node[concept] {theoretical} };
+    \end{tikzpicture}
+
+    \begin{tikzpicture}
+      \begin{axis}[
+        xlabel=$x$,
+        ylabel={$f(x) = x^2 - x +4$}
+      ]
+      % use TeX as calculator:
+      \addplot {x^2 - x +4};
+      \end{axis}
+    \end{tikzpicture}
   % Latex together with bibtex will generate a list of references from the
   % \cite commands in the latex document and the items in the bib file.
 
