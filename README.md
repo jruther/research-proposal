@@ -7,12 +7,12 @@ The repository is designed so that you can both use it as a guide and a template
 There are comments in the code and the content of the document is informative too.
 
 You may wish to try LaTeX out online before attempting to setup your system to
-use this template. You can do this by signing up for a free acount with
+use this template. You can do this by signing up for a free account with
 [Overleaf](https://www.overleaf.com/) and following their
 [Learn LaTeX in 30 minutes](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes).
 I also recommend you set up a [GitHub](https://github.com) if you don't already
 have one, and try
-[syncing an Overleaf project with a GitHUb repository](https://www.overleaf.com/learn/how-to/How_do_I_connect_an_Overleaf_project_with_a_repo_on_GitHub,_GitLab_or_BitBucket%3F).
+[syncing an Overleaf project with a GitHub repository](https://www.overleaf.com/learn/how-to/How_do_I_connect_an_Overleaf_project_with_a_repo_on_GitHub,_GitLab_or_BitBucket%3F).
 
 
 # Installing Latex
@@ -25,7 +25,7 @@ installation begins it can largely be left running in the background.
 MacTex is straight-forward to install, but Tex Live is a little trickier:
 1. On Windows 10, I recommend you just download Tex Live as one big ISO file,
    which is not how the website recommends you install it. I find it more
-   convenient and less error prone. You will find there latest version from an Irish mirror
+   convenient and less error prone. You will find the latest version from an Irish mirror
    [here](http://ftp.heanet.ie/mirrors/ctan.org/tex/systems/texlive/Images/texlive.iso).
 2. Once download, on Windows 10 you can double click the file, which will open
    it as if it were a USB key.
@@ -69,21 +69,22 @@ copy of this template going as follows.
 # Using the template
 1. All going well, you should now have the template open in front of you. You
    can open the proposal.tex file and have a read of the text in that file.
-   You might then try changing the authour of the document to your name and
+   You might then try changing the author of the document to your name and
    saving the file with `CTRL+S`.
 2. Upon saving an edit to the tex file, you should notice Visual Studio Code
    automatically compiling it into a pdf called proposal.pdf. If it doesn't
    happen automatically, try pressing `CTRL+ALT+B`. If that doesn't work, make
-   sure you have install the LaTeX Workshop extension as above. If you have, try
-   opening the command line and type `pdflatex --version` to make sure LaTeX is
-   installed correctly.
+   sure you have installed the LaTeX Workshop extension as above. If you have,
+   try opening the command line and type `pdflatex --version` to make sure LaTeX
+   is installed correctly.
 3. Open the pdf using Latex Workshop's pdf view with `CTRL+ALT+V`. If you are
    not familiar with the
    [Command Palette](https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_command-palette)
    I recommend you start using it, by typing `CTRL+SHIFT+P` or `CMD+SHIFT+P`.
-   To view the pdf you can open the command palette and start typing
+   To view the pdf, you can open the command palette and start typing
    `view latex pdf file`. The option should be visible after a few keystrokes
    and then use the arrow keys and press enter to select it.
 3. Finally, I recommend committing the changes to your git repository and
    pushing those changes to GitHub. Again, I recommend you get used to using
    the Command Palette to commit and push using git.
+4. I recommend you install the Code Spell Checker in Visual Studio Code too.
