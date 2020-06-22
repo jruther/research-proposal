@@ -1,11 +1,11 @@
-% Latex generates professionally typeset documents. It's different
+% LaTeX generates professionally typeset documents. It's different
 % from word processors like Microsoft Word in that it separates style from
 % content. It lets you write content without worrying too much about things like
-% fonts, positioning of tables, and references. Latex has carefully considered
+% fonts, positioning of tables, and references. LaTeX has carefully considered
 % rules to that sort of that heavy-lifting.
 
-% Latex files are text files where most of the content is the words, sentences,
-% and paragraphs. When complete, latex files are fed into the pdflatex program
+% LaTeX files are text files where most of the content is the words, sentences,
+% and paragraphs. When complete, LaTeX files are fed into the pdflatex program
 % to create a pdf - we usually call this compiling the document.
 
 % Within the text you can put comments and commands. These lines are comments.
@@ -13,7 +13,7 @@
 % Comments don't have any effect on the output file.
 
 % Commands start with a backslash. The first command is usually \documentclass,
-% as below. It tells latex the type of document to generate: book, article,
+% as below. It tells LaTeX the type of document to generate: book, article,
 % letter, etc. Commands can take parameters and/or options.
 
 % Parameters appear in curly braces after the command. Options appear in square
@@ -24,20 +24,20 @@
 % Some commands come in pairs like \begin{center} and \end{center}, which is
 % usually called an environment. Content in a center environment is centered.
 
-% Latex is built on a language called TeX. TeX is a simple language with only a
+% LaTeX is built on a language called TeX. TeX is a simple language with only a
 % few built-in commands. TeX allows us to create our own commands. LaTeX is a
 % huge collection of such programmer-created commands in one handy package.
 
-% There are only a few types of document built-in to latex, like article.
+% There are only a few types of document built-in to LaTeX, like article.
 % If you google "latex article options" you'll find lots of sites listing
 % what each option does.
 \documentclass[a4paper, oneside, hidelinks]{article}
 
-% Lot's of latex programmers have created extra packages for Latex.
+% Lots of LaTeX programmers have created extra packages for LaTeX.
 % They're not enabled by default as they affect the length of time it takes
 % to compile the document. They can enable things like colour and hyperlinks
 % in the output pdf. The \usepackage command will include a package, so long
-% as it is installed along with latex. TeXLive include lots of standard
+% as it is installed along with LaTeX. TeXLive include lots of standard
 % packages by default. Google "latex minted" to see what it does.
 
 % Enables the use of colour. 
@@ -78,18 +78,23 @@
 \usepackage{forest}
 % URLs.
 \usepackage{hyperref}
-% For plotting.
+% Plotting.
 \usepackage{pgfplots}
-% For filler.
+% Filler text.
 \usepackage{lipsum}
-% For line spacing
+% Line spacing.
 \usepackage{setspace}
-% For changing spacing on pages.
+% Changing spacing on pages.
 \usepackage{geometry}
-% For Gantt charts.
+% Gantt charts.
 \usepackage{pgfgantt}
+% Better appendices.
+\usepackage{appendix}
 
-% The tikz package allows us to create diagrams and plots using latex
+% Use latest pgfplots.
+\pgfplotsset{compat=newest}
+
+% The tikz package allows us to create diagrams and plots using LaTeX
 % commands. It defines some extra commands, like \usetikzlibrary below.
 
 % Various tikz libraries.
@@ -138,7 +143,7 @@
 
 % Everything above the below \begin{document} command is referred to as the
 % preamble. The preamble configures the features and styles of the output.
-% The \begin{document} command tells latex we beginning the content of the
+% The \begin{document} command tells LaTeX we beginning the content of the
 % document - the words, sentences, and paragraphs we want to create.
 
 % Begin the document.  
@@ -147,10 +152,10 @@
   % Display the title in the standard way for the document class.
   \maketitle
 
-  % Usually, the first item after the title is an abstact.
+  % Usually, the first item after the title is an abstract.
   % An abstract gives a short summary of the main contribution of the document.
   \begin{abstract}
-    We propose to research and develop an impovement to Joseph Weisenbaum's
+    We propose to research and develop an improvement to Joseph Weisenbaum's
     ELIZA program. The ELIZA program simulates a psychiatrist's questions and
     responses to a patient. The user of the program is the patient in the
     simulation. The program was designed to demonstrate some of the
@@ -167,10 +172,10 @@
   % second subsection of the third section would be listed as part 3.2 of the
   % document. You can either use the command \section{My section} to begin a 
   % new section or you can use \begin{section}{My section} and \end{section} to
-  % the same effect. The former is generally preferred as it's cleaner and latex
+  % the same effect. The former is generally preferred as it's cleaner and LaTeX
   % can generally figure out where the section ends.
   \section{Introduction}
-    The introduction generally overlaps with the abstract, but expands
+    The introduction generally overlaps with the abstract but expands
     on the ideas. Here, I would discuss the overall proposal and put a context
     around it.
     
@@ -187,8 +192,8 @@
     % References can be inserted using the \cite{} command with the item's
     % bibtex name in the curly braces. This will insert the reference indicator
     % where the \cite command is called and also ensure the reference title,
-    % authours, etc in the list of references. The ~ controls the amount of
-    % whitespace around the reference, try googling "latex reference tilde".
+    % authors, etc in the list of references. The ~ controls the amount of
+    % whitespace around the reference, try Googling "latex reference tilde".
     ELIZA is a program written by Joseph Wiesenbaum. It was proposed in his 1966
     paper~\cite{weisenbaumeliza}.
     Wiesenbaum also wrote a book~\cite{weisenbaumcomputerpower}.
@@ -196,12 +201,12 @@
     % We can give most high-level items a label with the \label command.
     % We'll come back to that in a minute.
     \label{section:literature}
-    Typically a research proposal will give a bit of background, listing four or
-    five directly relevant peer-reviewed publications.
+    Typically, a research proposal will give a bit of background, listing four
+    or five directly relevant peer-reviewed publications.
 
   % Another section.
   \section{Research question}
-    All research starts out with an idea. There are no shortage of interesting 
+    All research starts out with an idea. There is no shortage of interesting 
     ideas. An idea needs to be developed into a research question to have a
     reasonable chance of leading to a successful thesis submission.
     
@@ -210,12 +215,12 @@
     described in peer reviewed publications, books, and other reliable sources.
     It should lend itself to an investigation of some sort, that either provides
     evidence as to its answer or answers it outright. The investigation needs to
-    be reasonable to complete in the timeframe of the proposed research project.
+    be reasonable to complete in the time frame of the proposed research project.
 
-    It can be difficult to formulate a research question that meets all of those
+    It can be difficult to formulate a research question that meets all those
     characteristics. Research by its nature is tentative. It may seem impossible
     to know ahead of time whether a given investigation could be completed in a
-    given timeframe.
+    given time frame.
     
     The purpose of a research proposal, however, is to demonstrate an
     understanding of the what will be involved in carrying out your research
@@ -260,7 +265,7 @@
 
   % Let's create a subsection.
   \subsection{Milestones}
-    The project will be delivered through a series of milstones. The milestones
+    The project will be delivered through a series of milestones. The milestones
     will have the follow deliverables.
     % Here's a description list. Bulleted and numbered lists are similar.
     \begin{description}
@@ -270,60 +275,119 @@
       \item[Thesis:] the thesis will be delivered at the end of month 24.
     \end{description}
 
-  \section{More}
-    Latex is great at rendering math.
-    $$ math^{works} $$
 
-    \begin{figure}[H]
-      \begin{center}
-        \includegraphics[width=200px]{img/gmit-logo.jpg}
-      \end{center}
-      \caption{The GMIT logo.}
-      \label{img:logo}
-    \end{figure}
-    
-    
-    \resizebox{0.8\textwidth}{!}{%
-    \begin{tikzpicture}
-      \path[mindmap,concept color=black,text=white]
-        node[concept] {Computer Science}
-        [clockwise from=0]
-        child[concept color=green!50!black] {
-          node[concept] {practical}
-          [clockwise from=90]
-          child { node[concept] {algorithms} }
-          child { node[concept] {data structures} }
-          child { node[concept] {pro\-gramming languages} }
-          child { node[concept] {software engineer\-ing} }
-        }  
-        child[concept color=blue] {
-          node[concept] {applied}
-          [clockwise from=-30]
-          child { node[concept] {databases} }
-          child { node[concept] {WWW} }
-        }
-        child[concept color=red] { node[concept] {technical} }
-        child[concept color=orange] { node[concept] {theoretical} };
-    \end{tikzpicture}
-    }
+  % Now that we have all of the sections for a research proposal done, we'll
+  % add an appendix just to show off what LaTeX can do.
+  
+  % First, move to a new page.
+  \newpage
+  % Next tell LaTeX to start the appendices.
+  \appendixpage
+  \appendix
 
-    \begin{tikzpicture}
-      \begin{axis}[
-        xlabel=$x$,
-        ylabel={$f(x) = x^2 - x +4$}
-      ]
-      % use TeX as calculator:
-      \addplot {x^2 - x +4};
-      \end{axis}
-    \end{tikzpicture}
-  % Latex together with bibtex will generate a list of references from the
-  % \cite commands in the latex document and the items in the bib file.
+  % Now sections will be given letter identifiers rather than numbers.
+  \section{Math, images, code, and tables}
+    % Everything else remains the same.
+    \LaTeX{} contains many features for incorporating various visual elements.
+    
+    \subsection{Math}
+      For instance, \LaTeX{} is great at rendering math.
+      $$ f:\mathbb{R} \rightarrow \mathbb{R}:x \rightarrow e^{x+1} $$
+
+
+    \subsection{Plots}
+      You can create plots programmatically from within \LaTeX{} like in Figure 
+      \ref{plot:xsqfour}.
+      \begin{figure}[H]
+        \begin{center}
+          \begin{tikzpicture}
+            \begin{axis}[
+              xlabel=$x$,
+              ylabel={$f(x) = x^2 - x +4$}
+            ]
+            % use TeX as calculator:
+            \addplot {x^2 - x +4};
+            \end{axis}
+          \end{tikzpicture}
+        \end{center}
+        \caption{Great at plots.}
+        \label{plot:xsqfour}
+      \end{figure}
+
+    \subsection{Images}
+      Latex can incorporate raster images like PNG's and JPG's, as in Figure
+      \ref{img:logo}.
+      \begin{figure}[H]
+        \begin{center}
+          \includegraphics[width=200px]{img/gmit-logo.jpg}
+        \end{center}
+        \caption{The GMIT logo.}
+        \label{img:logo}
+      \end{figure}
+    
+    \subsection{Mind maps}
+      The TikZ package is the main plotting library for \LaTeX{}.
+      It can create mind maps like in Figure \ref{mindmap}.
+
+      \begin{figure}[H]
+        \begin{center}
+          \resizebox{0.8\textwidth}{!}{%
+            \begin{tikzpicture}
+              \path[mindmap,concept color=gmitgrey,text=white]
+                node[concept] {Computable}
+                [clockwise from=0]
+                child[concept color=gmitblue] {
+                  node[concept] {Recursive}
+                  [clockwise from=30]
+                  child {node[concept] {Decidable}}
+                  child {node[concept] {Not}}
+                }
+                child[concept color=gmitred] {node[concept] {Turing}}
+                child[concept color=gmitblue] {node[concept] {Reduction}}
+                child[concept color=gmitred] {
+                  node[concept] {Complexity}
+                  [clockwise from=210]
+                  child { node[concept] {P} }
+                  child { node[concept] {NP} }
+                };
+            \end{tikzpicture}
+          }
+        \end{center}
+        \caption{A mind map.}
+        \label{mindmap}
+      \end{figure}
+
+    \subsection{Automata}
+      It can also create automata like in Figure \ref{automaton}.
+      \begin{figure}[H]
+        \begin{center}
+          \begin{tikzpicture}[auto, on grid, node distance=2cm, initial text=, >=latex]
+            \node[state, initial]   (q_1)                {$q_1$}; 
+            \node[state]            (q_2) [right of=q_1] {$q_2$};
+            \node[state]            (q_3) [right of=q_2] {$q_3$}; 
+            \node[state, accepting] (q_4) [right of=q_3] {$q_4$};
+            \path[->] 
+              (q_1) edge [loop above] node {$0,1$}        ()
+                    edge []           node {$1$}          (q_2)
+              (q_2) edge []           node {$0,\epsilon$} (q_3)
+              (q_3) edge []           node {$1$}          (q_4)
+              (q_4) edge [loop above] node {$0,1$}        ();
+          \end{tikzpicture}
+        \end{center}
+        \caption{An automaton.}
+        \label{automaton}
+      \end{figure}
+
+
+
+  % LaTeX together with bibtex will generate a list of references from the
+  % \cite commands in the LaTeX document and the items in the bib file.
 
   % The style of referencing is controlled by the \bibliographystyle command.
   % There are loads of styles available - google "bibtex styles".
   % The ieeetr style uses numbers for references which is common in computing.
   \bibliographystyle{ieeetr}
-  % The \bibliography command tells latex where the bib file is. The bib file
+  % The \bibliography command tells LaTeX where the bib file is. The bib file
   % is called "bibliography.bib" in the current folder. You omit the ".bib".
   \bibliography{bibliography}
 
